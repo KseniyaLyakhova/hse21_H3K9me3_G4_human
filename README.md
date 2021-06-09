@@ -90,7 +90,7 @@ bedtools intersect  -a G4.merged.bed   -b  H3K9me3_A549.merge.hg19.bed  >  H3K9m
 ![genome_G4](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/images/PNG%20files/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82.jpg)
 Координаты: chr1:227,908,668-227,912,173
 #### Ассоция полученных пересечений с ближайшими генами
-Далее с помощью [скрипта](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/src/%D0%90%D0%BD%D0%BD%D0%BE%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B3%D0%B5%D0%BD%D0%BE%D0%B2.R) полученные пересечения были ассоциированы с ближайшими генами. Было проассоциировано 305 пиков, 251 уникальных гена.
+Далее с помощью [скрипта](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/src/%D0%90%D0%BD%D0%BD%D0%BE%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B3%D0%B5%D0%BD%D0%BE%D0%B2.R) полученные пересечения были ассоциированы с ближайшими генами. Было проассоциировано 6783 пика, 251 уникальных гена.
 #### GO-анализ для полученных уникальных генов
 С помощью [Panther](http://pantherdb.org/) был проведён GO-анализ для полученных уникальных генов. В [файле](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/data/pantherdn_GO_analysis.txt) представлен результат анализа. Далее приведены несколько самых значимых категорий:
 ![Panther_gens](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/images/PNG%20files/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%20%D1%81%20pantherdb.jpg)
