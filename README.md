@@ -86,7 +86,7 @@ bedtools intersect  -a G4.merged.bed   -b  H3K9me3_A549.merge.hg19.bed  >  H3K9m
 Затем с помощью прошораммы WinSCP полученный файл был загружен на ПК для дальнейшей работы.
 И был построен график распределения длин пересечений:
 ![len_hist.H3K9me3_A549.intersect_with_G4](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/images/PNG%20files/len_hist.H3K9me3_A549.intersect_with_G4-1.png)
-А также привожу график расположения пиков относительно аннотированных генов:
+ А также привожу график расположения пиков относительно аннотированных генов:
 ![chip_seeker.H3K9me3_A549.intersect_with_G4](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/images/chip_seeker.H3K9me3_A549.intersect_with_G4.plotAnnoPie.png)
 #### Визуализация
 С помощью [Genome Browser](http://genome.ucsc.edu/s/kalyakhova/hse21_H3K9me3_G4_human) были визуализированы полученные участки.
