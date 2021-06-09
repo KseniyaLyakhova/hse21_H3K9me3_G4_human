@@ -77,3 +77,20 @@ cat  *25.bed  |   sort -k1,1 -k2,2n   |   bedtools merge   >  G4.merge.bed
 Также с помощью [скрипта](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/src/%D0%9F%D0%B0%D0%B9%20%D1%87%D0%B0%D1%80%D1%82.R) был построен график расположения пиков относительно аннотированных генов. Были получены следующие результаты:
 
 ![chip_seeker.G4.merged.plotAnnoPie](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/images/chip_seeker.G4.merge.plotAnnoPie.png)
+
+### Анализ пересечений гистоновой метки и структуры ДНК
+С помощью bedtools были найдены пересечения гистоновой метки со структурами ДНК:
+```bash
+bedtools intersect  -a G4.merged.bed   -b  H3K9me3_A549.merge.hg19.bed  >  H3K9me3_A549.intersect_with_G4.bed
+```
+Затем с помощью прошораммы WinSCP полученный файл был загружен на ПК для дальнейшей работы.
+#### Визуализация
+С помощью [Genome Browser](http://genome.ucsc.edu/s/kalyakhova/hse21_H3K9me3_G4_human) были визуализированы полученные участки.
+На скриншоте отображены пересечения между гистоновой меткой и структурой ДНК:
+![genome_G4](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/images/PNG%20files/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82.jpg)
+Координаты: chr1:227,908,668-227,912,173
+#### Ассоция полученных пересечений с ближайшими генами
+Далее с помощью [скрипта](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/src/%D0%90%D0%BD%D0%BD%D0%BE%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B3%D0%B5%D0%BD%D0%BE%D0%B2.R) полученные пересечения были ассоциированы с ближайшими генами. Было проассоциировано 305 пиков, 251 уникальных гена.
+#### GO-анализ для полученных уникальных генов
+С помощью [Panther](http://pantherdb.org/) был проведён GO-анализ для полученных уникальных генов. В [файле](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/data/pantherdn_GO_analysis.txt) представлен результат анализа. Далее приведены несколько самых значимых категорий:
+![Panther_gens](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/images/PNG%20files/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%20%D1%81%20pantherdb.jpg)
