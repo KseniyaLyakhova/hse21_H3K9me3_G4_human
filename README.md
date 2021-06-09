@@ -55,3 +55,25 @@ cat  *.filtered.bed  |   sort -k1,1 -k2,2n   |   bedtools merge   >  H3K9me3_A54
 #### Визуализация
 С помощью [Genome Browser](http://genome.ucsc.edu/s/kalyakhova/merges) были визуализированы полученные исходные наборы ChIP-seq пиков и их объединение
 ![Merged](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/images/PNG%20files/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%20%D0%B8%D0%B7%20%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%B0.jpg)
+Можно заметить, что объединения прошло успешно.
+
+### Анализ участков вторичной структуры ДНК
+На кластер в личную директорию kalyakhova/githun/hse21_H3K9me3_G4_human/data были сохранены архивы с .bed-файлами с данными вторичной структуры ДНК:
+```bash
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3003nnn/GSM3003539/suppl/GSM3003539_Homo_all_w15_th-1_minus.hits.max.K.w50.25.bed.gz
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3003nnn/GSM3003539/suppl/GSM3003539_Homo_all_w15_th-1_plus.hits.max.K.w50.25.bed.gz
+```
+Для последующей работы они были распакованы (с удалением не нужных для работы столбцов) и объединены в один файл с помощью bedtools:
+```bash
+gunzip GSM3003539_Homo_all_w15_th-1_plus.hits.max.K.w50.25.bed.gz
+gunzip GSM3003539_Homo_all_w15_th-1_minus.hits.max.K.w50.25.bed.gz    
+cat  *25.bed  |   sort -k1,1 -k2,2n   |   bedtools merge   >  G4.merge.bed 
+```
+Затем с помощью программы WinSCP полученный файл был загружен на ПК для дальнейшей работы.
+
+Далее с помощью [скрипта](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/src/%D0%93%D0%B8%D1%81%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B.R) была получена гистограмма длин участков. Были получены следующие результаты:
+![len_hist.G4.merged](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/images/PNG%20files/len_hist.G4.merge-1.png)
+
+Также с помощью [скрипта](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/src/%D0%9F%D0%B0%D0%B9%20%D1%87%D0%B0%D1%80%D1%82.R) был построен график расположения пиков относительно аннотированных генов. Были получены следующие результаты:
+
+![chip_seeker.G4.merged.plotAnnoPie](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/images/chip_seeker.G4.merge.plotAnnoPie.png)
