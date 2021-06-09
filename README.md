@@ -23,3 +23,6 @@ liftOver   H3K9me3_A549_ENCFF444EWQ.h38.bed   hg38ToHg19.over.chain.gz   H3K9me3
 ```
 После этого все полученные файлы были перенесены на ПК с помощью программы WinSCP
 #### Построение гистрограмм
+С помощью [скрипта](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/src/%D0%93%D0%B8%D1%81%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B.R) были полученны гистограммы длин участков до и после конвертации к нужной версии генома.
+Были полученны следущие результаты:
+![len_hist_ENCFF444EWQ_hg38](https://github.com/KseniyaLyakhova/hse21_H3K9me3_G4_human/blob/main/images/len_hist.H3K9me3_A549_ENCFF444EWQ.h38.pdf)
